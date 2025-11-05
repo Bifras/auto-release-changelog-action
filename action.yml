@@ -1,4 +1,4 @@
-name: 'Auto Release & Changelog'
+name: 'Auto Release Changelog'
 description: 'Automatically create GitHub releases with changelog generated from conventional commits'
 author: 'Bifras'
 branding:
@@ -7,34 +7,34 @@ branding:
 
 inputs:
   github-token:
-    description: 'GitHub token con permessi per creare release e tag'
+    description: 'GitHub token with permissions to create releases and tags'
     required: true
   release-type:
-    description: 'Tipo di release: major, minor, patch, none'
+    description: 'Release type: major, minor, patch, none'
     required: false
     default: 'patch'
   changelog-path:
-    description: 'Path del file CHANGELOG.md'
+    description: 'Path to CHANGELOG.md file'
     required: false
     default: 'CHANGELOG.md'
   backend-url:
-    description: 'URL del backend SaaS per inviare report (opzionale)'
+    description: 'Backend SaaS URL for reporting (optional)'
     required: false
   api-key:
-    description: 'API key per autenticazione backend (opzionale)'
+    description: 'API key for backend authentication (optional)'
     required: false
   fail-on-backend-error:
-    description: 'Fallisce l''action se il backend ritorna errore (default: false)'
+    description: 'Fail action if backend returns error (default: false)'
     required: false
     default: 'false'
 
 outputs:
   release-url:
-    description: 'URL della release creata (se creata)'
+    description: 'URL of the created release (if created)'
   version:
-    description: 'Versione calcolata (se release-type != none)'
+    description: 'Calculated version (if release-type != none)'
   tag:
-    description: 'Tag creato (se release creata)'
+    description: 'Created tag (if release created)'
 
 runs:
   using: 'node16'

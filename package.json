@@ -1,6 +1,6 @@
 {
   "name": "auto-release-changelog-action",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "GitHub Action per auto-release con changelog automatico",
   "main": "dist/index.js",
   "scripts": {

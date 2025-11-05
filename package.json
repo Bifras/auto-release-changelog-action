@@ -1,0 +1,30 @@
+{
+  "name": "auto-release-changelog-action",
+  "version": "0.1.0",
+  "description": "GitHub Action per auto-release con changelog automatico",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/index.js -o dist --source-map --license licenses.txt",
+    "test": "node test/run-tests.js",
+    "lint": "eslint src/**/*.js || true"
+  },
+  "keywords": [
+    "github-action",
+    "release",
+    "changelog",
+    "automation",
+    "semver"
+  ],
+  "author": "Auto-generated",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/github": "^6.0.0",
+    "semver": "^7.5.4"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.1",
+    "eslint": "^8.56.0"
+  }
+}
+

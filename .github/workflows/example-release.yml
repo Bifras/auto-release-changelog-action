@@ -1,0 +1,53 @@
+name: Example Auto Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: 'Tipo di release (major/minor/patch)'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+          - major
+          - minor
+          - patch
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Auto Release & Changelog
+        id: release
+        uses: ./ # Usa action locale (o sostituisci con action pubblica)
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          release-type: ${{ github.event.inputs.release_type || 'patch' }}
+          changelog-path: 'CHANGELOG.md'
+          # Opzionale: integrazione backend
+          # backend-url: ${{ secrets.BACKEND_URL }}
+          # api-key: ${{ secrets.BACKEND_API_KEY }}
+          fail-on-backend-error: false
+
+      - name: Output release URL
+        run: |
+          echo "Release URL: ${{ steps.release.outputs.release-url }}"
+          echo "Version: ${{ steps.release.outputs.version }}"
+          echo "Tag: ${{ steps.release.outputs.tag }}"
+

@@ -46,7 +46,7 @@ jobs:
         with:
           node-version: '18'
 
-      - uses: your-org/auto-release-changelog-action@v0.1.0
+      - uses: Bifras/auto-release-changelog-action@v0.1.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           release-type: ${{ github.event.inputs.release_type }}
@@ -55,7 +55,7 @@ jobs:
 ### Con Backend Integration
 
 ```yaml
-- uses: your-org/auto-release-changelog-action@v0.1.0
+- uses: Bifras/auto-release-changelog-action@v0.1.1
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     release-type: 'minor'
@@ -67,7 +67,7 @@ jobs:
 ### Solo Changelog (No Release)
 
 ```yaml
-- uses: your-org/auto-release-changelog-action@v0.1.0
+- uses: Bifras/auto-release-changelog-action@v0.1.1
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     release-type: 'none'

@@ -78,12 +78,12 @@ jobs:
 
 | Input | Descrizione | Required | Default |
 |-------|-------------|----------|---------|
-| `github-token` | GitHub token con permessi per creare release | ✅ | - |
-| `release-type` | Tipo di release: `major`, `minor`, `patch`, `none` | ❌ | `patch` |
-| `changelog-path` | Path del file CHANGELOG.md | ❌ | `CHANGELOG.md` |
-| `backend-url` | URL backend SaaS per reporting | ❌ | - |
-| `api-key` | API key per backend | ❌ | - |
-| `fail-on-backend-error` | Fallisce action se backend errore | ❌ | `false` |
+| `github-token` | GitHub token con permesso `contents:write` | ✅ | - |
+| `release-type` | Tipo versione: `major`, `minor`, `patch`, `none` | ❌ | `patch` |
+| `changelog-path` | Path del file changelog | ❌ | `CHANGELOG.md` |
+| `backend-url` | URL API backend per reporting | ❌ | - |
+| `api-key` | API key backend | ❌ | - |
+| `fail-on-backend-error` | Fallisce se backend errore | ❌ | `false` |
 
 ## 📤 Outputs
 

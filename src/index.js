@@ -56,7 +56,7 @@ function execCommand(command, options = {}) {
     });
     return output ? output.toString().trim() : '';
   } catch (error) {
-    core.warn(`Comando fallito: ${command}`);
+    core.warning(`Comando fallito: ${command}`);
     throw error;
   }
 }
@@ -96,7 +96,7 @@ async function getLatestTag(octokit, owner, repo) {
     core.info(`Ultimo tag trovato: ${tags[0].name}`);
     return latestTag;
   } catch (error) {
-    core.warn(`Errore nel recupero tag: ${error.message}`);
+    core.warning(`Errore nel recupero tag: ${error.message}`);
     return null;
   }
 }
@@ -140,7 +140,7 @@ function generateChangelog(changelogPath) {
     );
     core.info('CHANGELOG.md generato/aggiornato con successo');
   } catch (error) {
-    core.warn(`Errore nella generazione changelog: ${error.message}`);
+    core.warning(`Errore nella generazione changelog: ${error.message}`);
     // Non blocca l'esecuzione se il changelog fallisce
   }
 }
@@ -165,7 +165,7 @@ async function createRelease(octokit, owner, repo, version, changelogPath) {
       });
       return release.html_url;
     } catch (error) {
-      core.warn(`Impossibile recuperare URL release esistente: ${error.message}`);
+      core.warning(`Impossibile recuperare URL release esistente: ${error.message}`);
       return null;
     }
   }
@@ -345,7 +345,7 @@ async function run() {
         if (failOnBackendError) {
           throw error;
         } else {
-          core.warn(`Errore backend non bloccante: ${error.message}`);
+          core.warning(`Errore backend non bloccante: ${error.message}`);
         }
       }
     }

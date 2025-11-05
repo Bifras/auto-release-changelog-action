@@ -1,6 +1,6 @@
 name: 'Auto Release & Changelog'
-description: 'Crea automaticamente release GitHub con changelog generato da conventional commits'
-author: 'Auto-generated'
+description: 'Automatically create GitHub releases with changelog generated from conventional commits'
+author: 'Bifras'
 branding:
   icon: 'git-commit'
   color: 'blue'

@@ -35,7 +35,7 @@ jobs:
 
       - name: Auto Release & Changelog
         id: release
-        uses: ./ # Usa action locale (o sostituisci con action pubblica)
+        uses: Bifras/auto-release-changelog-action@v0.1.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           release-type: ${{ github.event.inputs.release_type || 'patch' }}

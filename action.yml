@@ -1,4 +1,4 @@
-name: 'Auto Release Changelog'
+name: 'Franco Release Changelog'
 description: 'Automatically create GitHub releases with changelog generated from conventional commits'
 author: 'Bifras'
 branding:
